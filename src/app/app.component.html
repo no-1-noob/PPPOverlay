@@ -14,9 +14,9 @@
             <div *ngSwitchDefault>...</div>
           </div>
           <div class="leaderBoardText" [ngStyle]="{ 'width': textSpaceStyle}">
-            <label *ngIf="!showPB" [@ppInOutAnimation] class="pp" [ngStyle]="{ 'width': ppSpaceStyle}">{{item.pp | number: '1.2-2'}}{{item.ppSuffix}}</label>
-            <label *ngIf="showPB" [@pbOutAnimation] class="personalBest">{{item.personalBest}}</label>
-            <div *ngIf="!showPB" [@ppInOutAnimation] class="ppGain">
+            <label *ngIf="!showPB" class="pp" [ngStyle]="{ 'width': ppSpaceStyle}">{{item.pp | number: '1.2-2'}}{{item.ppSuffix}}</label>
+            <label *ngIf="showPB" class="personalBest">{{item.personalBest}}</label>
+            <div *ngIf="!showPB" class="ppGain">
               <label>[</label>
               <label [ngClass]=styleGain(item)>{{item.ppGain | number: '1.2-2'}}{{item.ppSuffix}}</label>
               <label>]</label>

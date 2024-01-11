@@ -100,7 +100,7 @@ export class AppComponent implements AfterViewInit {
 	}
 
 	updateStyles(){
-		let maxMax = Math.max(...this.arrData.map(x => x.maxPP ?? 0)).toString()
+		let maxMax = Math.max(...this.arrData.map(x => Math.ceil(x.maxPP ?? 0))).toString()
 		let maxLength = maxMax.length + 2; //space for 'pp'
 		if(maxMax.indexOf('.') == -1 && maxMax.indexOf(',') == -1){
 			maxLength += 3; //add space for x.23 pp
