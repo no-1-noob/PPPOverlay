@@ -1,27 +1,28 @@
 # PPPOverlay
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
+A stream overlay for use with v1.0.2+ of https://github.com/no-1-noob/PPPredictor
 
-## Development server
+## How to use
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Just use https://mods.no1noob.net/PPPOverlay as a browse Source in your steaming software:
 
-## Code scaffolding
+![image](https://github.com/no-1-noob/PPPOverlay/assets/91905916/e730b8d5-875b-4fcc-a28b-de5b2d1293ee)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Options
+You can change the url to make some changes e.g.: https://mods.no1noob.net/PPPOverlay?ip=1.1.1.1&port=1234 to change ip and port used (port in the PPPredictor mod has to match)
 
-## Build
+-  ip
+-  port
+-  position
+    - topleft
+    - topright
+    - bottomleft
+    - bottomright
+- backgroundStyle
+    - bgBlack (mainly used for debugging without obs)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Developing
 
-## Running unit tests
+Install the modules with 'npm install'.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Run the code with 'ng serve'.
