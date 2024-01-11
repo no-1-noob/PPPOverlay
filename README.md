@@ -1,6 +1,7 @@
 # PPPOverlay
 
 A stream overlay for use with v1.0.2+ of https://github.com/no-1-noob/PPPredictor
+![image](https://github.com/no-1-noob/PPPOverlay/assets/91905916/764f8c1b-aad1-4e84-a828-e7861bd0dc25)
 
 ## How to use
 
