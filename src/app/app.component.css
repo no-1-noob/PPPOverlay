@@ -1,0 +1,92 @@
+body{
+    background-color: unset !important;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.bgBlack{
+    background-color: black !important;
+}
+
+.allHolder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.overlayholder{
+    position: absolute;
+    
+    padding: 40px;
+}
+
+.topleft{
+    top: 0px;
+    left: 0px;
+}
+
+.topright{
+    top: 0px;
+    right: 0px;
+}
+
+.bottomleft{
+    bottom: 0px;
+    left: 0px;
+}
+
+.bottomright{
+    bottom: 0px;
+    right: 0px;
+}
+
+.leaderboardicon{
+    width: 50px;
+    height: 50px;
+    padding-right: 16px;
+}
+
+.leaderboardentry{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+
+.leaderBoardText{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-items: center;
+}
+
+.centerHolder{
+    width: 400px;
+}
+
+.personalBest{
+    position: absolute;
+    right: 7ch;
+    width: 250px;
+    text-align: end;
+    padding-right: 40px;
+}
+
+.pp{
+    text-align: end;
+    padding-right: 5px;
+}
+
+.ppGain{
+    min-width: 7ch;
+    text-align: start;
+}
+
+.ppGain .green{
+    color: green;
+}
