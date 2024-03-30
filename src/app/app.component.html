@@ -15,7 +15,8 @@
           </div>
           <div class="leaderBoardText" [ngStyle]="{ 'width': textSpaceStyle}">
             <label *ngIf="!showPB" class="pp" [ngStyle]="{ 'width': ppSpaceStyle}">{{item.pp | number: '1.2-2'}}{{item.ppSuffix}}</label>
-            <label *ngIf="showPB" class="personalBest">{{item.personalBest}}</label>
+            <label *ngIf="showPB && item.personalBest" class="personalBest">{{item.personalBest | number: '1.2-2'}}{{item.ppSuffix}} PB</label>
+            <label *ngIf="showPB && !item.personalBest" class="personalBest">{{"---"}} {{item.ppSuffix}} PB</label>
             <div *ngIf="!showPB" class="ppGain">
               <label>[</label>
               <label [ngClass]=styleGain(item)>{{item.ppGain | number: '1.2-2'}}{{item.ppSuffix}}</label>
