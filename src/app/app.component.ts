@@ -1,13 +1,12 @@
 import { AfterViewInit, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
-	selector: 'app-root',
-	standalone: true,
-	imports: [CommonModule, RouterOutlet],
-	templateUrl: './app.component.html',
-	styleUrl: './app.component.css'
+    selector: 'app-root',
+    imports: [CommonModule],
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.css',
+	standalone: true
 })
 export class AppComponent implements AfterViewInit {
 	title = 'PPPOverlay';

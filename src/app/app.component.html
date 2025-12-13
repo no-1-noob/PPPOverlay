@@ -1,31 +1,59 @@
 <body style="background-color: black; width: 100vw; height: 100vh; margin: 0px;" [ngClass]="settings.backgroundStyle">
   <div class="overlayholder" [ngClass]="settings.position">
-    <div *ngIf="!isConnected">
-      PPPOverlay not connected
-    </div>
-    <div *ngIf="isConnected">
-      <!--PPP Overlay here-->
-      <div *ngFor="let item of arrData" style="color: white;">
-        <div *ngIf="item.isRanked && isSongRunning" class="leaderboardentry">
-          <div [ngSwitch]="item.leaderboardName">
-            <img src="assets/ScoreSaber.png" class="leaderboardicon" *ngSwitchCase="'ScoreSaber'" />
-            <img src="assets/BeatLeader.png" class="leaderboardicon" *ngSwitchCase="'BeatLeader'" />
-            <img src="{{item.iconPath}}" class="leaderboardicon" *ngSwitchCase="'HitBloq'" />
-            <img src="assets/AccSaber.png" class="leaderboardicon" *ngSwitchCase="'AccSaber'" />
-            <div *ngSwitchDefault>...</div>
-          </div>
-          <div class="leaderBoardText" [ngStyle]="{ 'width': textSpaceStyle}">
-            <label *ngIf="!showPB" class="pp" [ngStyle]="{ 'width': ppSpaceStyle}">{{item.pp | number: '1.2-2'}}{{item.ppSuffix}}</label>
-            <label *ngIf="showPB && item.personalBest" class="personalBest">{{item.personalBest | number: '1.2-2'}}{{item.ppSuffix}} PB</label>
-            <label *ngIf="showPB && !item.personalBest" class="personalBest">{{"---"}} {{item.ppSuffix}} PB</label>
-            <div *ngIf="!showPB" class="ppGain">
-              <label>[</label>
-              <label [ngClass]=styleGain(item)>{{item.ppGain | number: '1.2-2'}}{{item.ppSuffix}}</label>
-              <label>]</label>
-            </div>
-          </div>
-        </div>
+    @if (!isConnected) {
+      <div>
+        PPPOverlay not connected
       </div>
-    </div>
+    }
+    @if (isConnected) {
+      <div>
+        <!--PPP Overlay here-->
+        @for (item of arrData; track item) {
+          <div style="color: white;">
+            @if (item.isRanked && isSongRunning) {
+              <div class="leaderboardentry">
+                <div>
+                  @switch (item.leaderboardName) {
+                    @case ('ScoreSaber') {
+                      <img src="assets/ScoreSaber.png" class="leaderboardicon" />
+                    }
+                    @case ('BeatLeader') {
+                      <img src="assets/BeatLeader.png" class="leaderboardicon" />
+                    }
+                    @case ('HitBloq') {
+                      <img src="{{item.iconPath}}" class="leaderboardicon" />
+                    }
+                    @case ('AccSaber') {
+                      <img src="assets/AccSaber.png" class="leaderboardicon" />
+                    }
+                    @default {
+                      <div>...</div>
+                    }
+                  }
+                </div>
+                <div class="leaderBoardText" [ngStyle]="{ 'width': textSpaceStyle}">
+                  @if (!showPB) {
+                    <label class="pp" [ngStyle]="{ 'width': ppSpaceStyle}">{{item.pp | number: '1.2-2'}}{{item.ppSuffix}}</label>
+                  }
+                  @if (showPB && item.personalBest) {
+                    <label class="personalBest">{{item.personalBest | number: '1.2-2'}}{{item.ppSuffix}} PB</label>
+                  }
+                  @if (showPB && !item.personalBest) {
+                    <label class="personalBest">{{"---"}} {{item.ppSuffix}} PB</label>
+                  }
+                  @if (!showPB) {
+                    <div class="ppGain">
+                      <label>[</label>
+                      <label [ngClass]=styleGain(item)>{{item.ppGain | number: '1.2-2'}}{{item.ppSuffix}}</label>
+                      <label>]</label>
+                    </div>
+                  }
+                </div>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    }
   </div>
 </body>
