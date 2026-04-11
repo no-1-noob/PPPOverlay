@@ -24,6 +24,9 @@ You can change the url to make some changes e.g.: https://mods.no1noob.net/PPPOv
 
 ## Developing
 
-Install the modules with 'npm install'.
-
-Run the code with 'ng serve'.
+- Install NodeJS https://nodejs.org/en/download
+- Open terminal/commandline in the folder where the package.json is located
+    - execute ```npm install``` in the terminal
+    - install angular cli ```npm i -g @angular/cli``` (maybe admin rights needed depending on your user profile)
+    - ```ng serve```
+        -> after build completes it should be available at "http://localhost:4200/"
