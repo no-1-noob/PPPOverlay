@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
     imports: [CommonModule],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css',
+	changeDetection: ChangeDetectionStrategy.Eager,
 	standalone: true
 })
 export class AppComponent implements AfterViewInit {
